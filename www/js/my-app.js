@@ -81,16 +81,33 @@ $$.getJSON("http://www.apilayer.net/api/live?access_key=2460d56dd4475d384807c7a7
 
 
 function convert() {
-    var in_amt, dollar;
-    in_amt = document.getElementById("inAmt").value;
+    var in_amt, euro;
     var rate = eur_rate;
+
+    in_amt = document.getElementById("inAmt").value;
+
+    if(in_amt == "" || in_amt == 0 || in_amt <0 || isNaN(in_amt)){
+        alert("Invalid Entry");
+        document.getElementById("inAmt").innerHTML = "";
+        reset();
+        return;
+        }
+    
     //alert(eur_rate);
     //alert(in_amt);
     //console.log(in_amt);
+    euro = in_amt * rate;
 
-    document.getElementById("entered").innerHTML = "Dollar Entered: " + "$" + in_amt + "<br>";
+    document.getElementById("entered").innerHTML = "Dollar Amount Entered: " + "$" + in_amt + "<br>";
     document.getElementById("rate").innerHTML = "Current Rate: " + rate + "<br>";
-    document.getElementById("converted").innerHTML = "Euro Amount: " + "€" + in_amt * rate + "<br>";
+    document.getElementById("converted").innerHTML = "Euro Amount: " + "€" + euro.toFixed(2) + "<br>";
 
 
 };
+
+function reset() {
+    document.getElementById("form1").reset();
+    document.getElementById("entered").innerHTML = "";
+    document.getElementById("rate").innerHTML = "";
+    document.getElementById("converted").innerHTML = "";
+}

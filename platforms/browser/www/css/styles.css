@@ -13,3 +13,8 @@
 .statusbar-overlay {
     background: #000000;
 }
+
+body {
+    background-color: rgb(107, 107, 233);    
+    text-align: center;
+}
