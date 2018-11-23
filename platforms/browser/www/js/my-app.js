@@ -68,7 +68,7 @@ $$.getJSON("http://www.apilayer.net/api/live?access_key=2460d56dd4475d384807c7a7
         
     });
     
-    document.getElementById('title').innerHTML = "**** Currency Converter ****<br><br>";
+    document.getElementById('title').innerHTML = "**** Dollar Euro Currency Converter ****<br><br>";
     document.getElementById('intro').innerHTML = "Enter Dollar Amount to Convert: <br><br>";
     // document.getElementById('status').innerHTML = quotesForView;
     //console.log(keys);
@@ -109,5 +109,5 @@ function reset() {
     document.getElementById("form1").reset();
     document.getElementById("entered").innerHTML = "";
     document.getElementById("rate").innerHTML = "";
-    document.getElementById("converted").innerHTML = "";
+    document.getElementById("converted").value = "";
 }
