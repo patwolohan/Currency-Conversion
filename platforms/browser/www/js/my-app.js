@@ -100,8 +100,8 @@ function convert() {
 
     document.getElementById("entered").innerHTML = "Dollar Amount Entered: " + "$" + in_amt + "<br>";
     document.getElementById("rate").innerHTML = "Current Rate: " + rate + "<br>";
-    document.getElementById("converted").innerHTML = "Euro Amount: " + "€" + euro.toFixed(2) + "<br>";
-
+    // document.getElementById("converted").innerHTML = "Euro Amount: " + "€" + euro.toFixed(2) + "<br>";
+    document.getElementById("converted").value = "€ " + euro.toFixed(2);
 
 };
 
