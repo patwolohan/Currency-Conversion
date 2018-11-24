@@ -57,18 +57,21 @@ $$.getJSON("http://www.apilayer.net/api/live?access_key=2460d56dd4475d384807c7a7
     
     
     
-
+    //iterate through elements to find USDEUR rate
     keys.forEach((element) => {
         quotesForView += "1 USD is equivalent to " + quotes[element] + " " + element + "<br>";
+        
+        //find USDEUR rate and assign to variable
         if(element == "USDEUR"){
             eur_rate = quotes[element];
-            //console.log(eur_rate);
+            console.log(eur_rate);
             //console.log(quotes[element]);
         }
         
     });
     
-    document.getElementById('title').innerHTML = "**** Currency Converter ****<br><br>";
+    //write the intro and title to screen
+    document.getElementById('title').innerHTML = "**** Dollar Euro Currency Converter ****<br><br>";
     document.getElementById('intro').innerHTML = "Enter Dollar Amount to Convert: <br><br>";
     // document.getElementById('status').innerHTML = quotesForView;
     //console.log(keys);
@@ -79,35 +82,42 @@ $$.getJSON("http://www.apilayer.net/api/live?access_key=2460d56dd4475d384807c7a7
 
 
 
-
 function convert() {
-    var in_amt, euro;
+    var in_amtDollar, inAmtEuro, euro, dollar;
+    //take in euro rate from API
     var rate = eur_rate;
+    // take in Dollar Conversion Value
+    in_amtDollar = document.getElementById("inAmtDollar").value;
+    //take in Euro conversion value
+    in_amtEuro = document.getElementById("inAmtEuro").value;    
 
-    in_amt = document.getElementById("inAmt").value;
-
-    if(in_amt == "" || in_amt == 0 || in_amt <0 || isNaN(in_amt)){
-        alert("Invalid Entry");
-        document.getElementById("inAmt").innerHTML = "";
-        reset();
-        return;
-        }
+    
     
     //alert(eur_rate);
     //alert(in_amt);
     //console.log(in_amt);
-    euro = in_amt * rate;
+    //euro conversion
+    euro = in_amtEuro * rate;
+    //dollar conversion
+    dollar = in_amtDollar / rate;
 
-    document.getElementById("entered").innerHTML = "Dollar Amount Entered: " + "$" + in_amt + "<br>";
+    //output entered currencies and rate to screen
+    document.getElementById("enteredEuro").innerHTML = "Amount Entered Euro: " + in_amtEuro + "<br>";
+    document.getElementById("enteredDollar").innerHTML = "Amount Entered Dollar: " + in_amtDollar + "<br>";
     document.getElementById("rate").innerHTML = "Current Rate: " + rate + "<br>";
-    document.getElementById("converted").innerHTML = "Euro Amount: " + "€" + euro.toFixed(2) + "<br>";
-
+    
+    //output conversions to screen
+    document.getElementById("convertedEuro").innerHTML = "Euro Converted Amount: € " + euro.toFixed(2);
+    document.getElementById("convertedDollar").innerHTML = "Dollar Converted Amount: $ " + dollar.toFixed(2);
 
 };
 
+//reset the values entered
 function reset() {
     document.getElementById("form1").reset();
-    document.getElementById("entered").innerHTML = "";
+    document.getElementById("enteredEuro").innerHTML = "";
+    document.getElementById("enteredDollar").innerHTML = "";
     document.getElementById("rate").innerHTML = "";
-    document.getElementById("converted").innerHTML = "";
+    document.getElementById("convertedEuro").innerHTML = "";
+    document.getElementById("convertedDollar").innerHTML = "";
 }
