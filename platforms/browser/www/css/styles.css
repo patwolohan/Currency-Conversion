@@ -15,6 +15,99 @@
 }
 
 body {
-    background-color: rgb(107, 107, 233);    
+    background-color: #6196ed;
     text-align: center;
+}
+
+#map {
+    margin: auto;
+    background-color: lightskyblue;
+    border-radius: 5px;
+    width: 300px;
+    padding: 5px 5px 5px 10px;
+    height: 200px;
+    font-family: arial;
+    border: 5px double lavender;
+
+}
+
+
+
+#weather {
+    margin: auto;
+    text-align: left;
+    background-color: lightskyblue;
+    border-radius: 5px;
+    width: 300px;
+    padding: 5px 5px 5px 10px;
+    height: 200px;
+    font-family: arial;
+    border: 5px double lavender;
+}
+
+#conversion {
+    /* float: center;    */
+    margin: auto;
+    background-color: lightseagreen;
+    border-radius: 5px;
+    width: 300px;
+    padding: 5px 5px 5px 10px;
+    height: 200px;
+    font-family: arial;
+    border: 5px double lavender;
+}
+
+#converted {
+    /* float: center;  */
+    margin: auto;
+    background-color: lightgreen;
+    border-radius: 5px;
+    width: 300px;
+    padding: 5px 5px 5px 10px;
+    height: 200px;
+    font-family: arial;
+    border: 5px double lavender;
+}
+
+#travel {
+    /* float: center;  */
+    margin: auto;
+    background-color: lightgreen;
+    border-radius: 5px;
+    width: 300px;
+    padding: 5px 5px 5px 10px;
+    height: 200px;
+    font-family: arial;
+    border: 5px double lavender;
+}
+
+#pic {
+    margin: auto;
+    width: 300px;
+
+}
+
+#condtext {
+    text-align: left;
+}
+
+#cond {
+    float: left;
+    margin-right: auto;
+    margin-bottom: auto;
+    background-color: mistyrose;
+    border-radius: 5px;
+    width: 80px;
+}
+
+#file {
+    margin: auto;
+    text-align: left;
+    background-color: lightgrey;
+    border-radius: 5px;
+    width: 300px;
+    padding: 5px 5px 5px 10px;
+    height: 200px;
+    font-family: arial;
+    border: 5px double lavender;
 }
